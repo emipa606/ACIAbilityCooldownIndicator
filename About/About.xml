@@ -16,7 +16,7 @@ Also displays a short message and plays a notification sound when ready again.
 Important: This mod only displays Ideology abilities. No support for Royalty yet, because I never used Royalty much.
 
 The mod depends on Harmony and alters only the colonist topbar, so be advised if you use other mods that also alter the topbar.
-Let me know about bugs or improvements here at Steam or at Github 
+Let me know about bugs or improvements here at Steam or at Github https://github.com/Georodin/ACI-AbilityCooldownIndicator
 </description>
 <modDependencies>
 <li>
