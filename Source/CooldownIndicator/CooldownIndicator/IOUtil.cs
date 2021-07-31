@@ -9,7 +9,7 @@ namespace CooldownIndicator
     {
 
         //Util to debug created IL code from HarmonyPatches, txt should appear in RimWorld root
-        static void writeToFile(string name, List<CodeInstruction> instructions)
+        public static void writeToFile(string name, List<CodeInstruction> instructions)
         {
             CodeInstruction[] arrayIn = instructions.ToArray();
             string[] arrayOut = new string[arrayIn.Length];
