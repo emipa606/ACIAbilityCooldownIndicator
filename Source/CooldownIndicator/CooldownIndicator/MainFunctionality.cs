@@ -19,11 +19,6 @@ namespace CooldownIndicator
             List<Ability> abilities = pawn.abilities.AllAbilitiesForReading;
             Ability selected = abilities[0];
 
-            if (abilities[0].CooldownTicksTotal == 0)
-            {
-                selected = abilities[1];
-            }
-
             if (selected.CooldownTicksRemaining != 0)
             {
                 if (!pawnsOnCooldown.Contains(pawn))
@@ -53,12 +48,6 @@ namespace CooldownIndicator
             float position = 0;
             Color lerpedColor = Color.white;
 
-
-            if (abilities[0].CooldownTicksTotal == 0)
-            {
-                selected = abilities[1];
-            }
-
             if (selected.CooldownTicksRemaining != 0)
             {
                 position = 1f * selected.CooldownTicksRemaining / selected.CooldownTicksTotal;
@@ -82,7 +71,7 @@ namespace CooldownIndicator
                 }
                 else
                 {
-                    lerpedColor = Color.Lerp(yellow, Color.red, (position - .5f) * 2);
+                    lerpedColor = Color.Lerp(yellow, red, (position - .5f) * 2);
                 }
             }
 

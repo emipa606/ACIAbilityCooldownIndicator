@@ -133,3 +133,4 @@ D:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ACI-AbilityCooldownI
 D:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ACI-AbilityCooldownIndicator\Source\CooldownIndicator\CooldownIndicator\obj\Debug\CooldownIndicator.pdb
 D:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ACI-AbilityCooldownIndicator\Assemblies\CooldownIndicator.dll
 D:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ACI-AbilityCooldownIndicator\Assemblies\CooldownIndicator.pdb
+D:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ACI-AbilityCooldownIndicator\Source\CooldownIndicator\CooldownIndicator\obj\Debug\CooldownIndicator.csproj.CopyComplete
