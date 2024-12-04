@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooldownIndicator", "CooldownIndicator\CooldownIndicator.csproj", "{DB20DE0F-DCF0-433B-94AE-C0599C401144}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB20DE0F-DCF0-433B-94AE-C0599C401144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB20DE0F-DCF0-433B-94AE-C0599C401144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB20DE0F-DCF0-433B-94AE-C0599C401144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB20DE0F-DCF0-433B-94AE-C0599C401144}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {829e4e18-df6c-4dec-a36e-441bf1aff2ba}
+	EndGlobalSection
+EndGlobal
