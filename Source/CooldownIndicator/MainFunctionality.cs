@@ -10,15 +10,15 @@ internal class MainFunctionality
 {
     public static readonly Texture2D icon = ContentFinder<Texture2D>.Get("cooldownIcon");
 
-    private static readonly Color red = new Color(1f, 0f, 0f);
+    private static readonly Color red = new(1f, 0f, 0f);
 
-    private static readonly Color yellow = new Color(1f, 1f, 0f);
+    private static readonly Color yellow = new(1f, 1f, 0f);
 
-    private static readonly Color green = new Color(0f, 1f, 0f);
+    private static readonly Color green = new(0f, 1f, 0f);
 
     private static readonly HashSet<Pawn> pawnsOnCooldown = [];
 
-    public static void shouldDisplayCooldownMessage(Pawn pawn)
+    private static void shouldDisplayCooldownMessage(Pawn pawn)
     {
         var allAbilitiesForReading = pawn.abilities.AllAbilitiesForReading;
         var ability = allAbilitiesForReading[0];
@@ -33,7 +33,7 @@ internal class MainFunctionality
         }
     }
 
-    public static Color currentColor(Pawn pawn)
+    public static Color CurrentColor(Pawn pawn)
     {
         var allAbilitiesForReading = pawn.abilities.AllAbilitiesForReading;
         var ability = allAbilitiesForReading[0];

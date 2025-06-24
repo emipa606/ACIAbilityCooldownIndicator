@@ -1,4 +1,4 @@
-# [ACI - Ability Cooldown Indicator (Continued)]()
+# [ACI - Ability Cooldown Indicator (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3378117447)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -50,4 +50,4 @@ Without them none of this would be possible...
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/ACIAbilityCooldownIndicator?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/) | tags:  cooldown,  indicator
+[![Image](https://img.shields.io/github/v/release/emipa606/ACIAbilityCooldownIndicator?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3378117447) | tags:  cooldown,  indicator

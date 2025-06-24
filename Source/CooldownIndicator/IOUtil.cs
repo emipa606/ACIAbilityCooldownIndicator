@@ -7,7 +7,7 @@ namespace CooldownIndicator;
 
 internal class IOUtil
 {
-    public static void writeToFile(string name, List<CodeInstruction> instructions)
+    public static void WriteToFile(string name, List<CodeInstruction> instructions)
     {
         var array = instructions.ToArray();
         var array2 = new string[array.Length];
