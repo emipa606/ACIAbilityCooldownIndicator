@@ -5,7 +5,7 @@ using Verse;
 
 namespace CooldownIndicator;
 
-internal class IOUtil
+internal static class IOUtil
 {
     public static void WriteToFile(string name, List<CodeInstruction> instructions)
     {

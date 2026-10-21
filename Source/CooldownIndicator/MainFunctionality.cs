@@ -6,7 +6,7 @@ using Verse;
 namespace CooldownIndicator;
 
 [StaticConstructorOnStartup]
-internal class MainFunctionality
+internal static class MainFunctionality
 {
     public static readonly Texture2D icon = ContentFinder<Texture2D>.Get("cooldownIcon");
 
@@ -41,8 +41,16 @@ internal class MainFunctionality
             ? 0f
             : 1f * ability.CooldownTicksRemaining / ability.CooldownTicksTotal;
         num = Mathf.Clamp(num, 0f, 1f);
-        var white = num == 0f ? Color.cyan :
-            !(num < 0.5) ? Color.Lerp(yellow, red, (num - 0.5f) * 2f) : Color.Lerp(green, yellow, num * 2f);
+        Color white;
+        if (num == 0f)
+        {
+            white = Color.cyan;
+        }
+        else
+        {
+            white = !(num < 0.5) ? Color.Lerp(yellow, red, (num - 0.5f) * 2f) : Color.Lerp(green, yellow, num * 2f);
+        }
+
         shouldDisplayCooldownMessage(pawn);
         return white;
     }

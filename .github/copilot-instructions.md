@@ -1,60 +1,64 @@
-# GitHub Copilot Instruction File for "ACI - Ability Cooldown Indicator (Continued)"
-
-Welcome to the development guide for the "ACI - Ability Cooldown Indicator (Continued)" mod. This document provides an overview, coding patterns, XML integration instructions, and suggestions for using GitHub Copilot to enhance your modding workflow.
+# Copilot Instructions for ACI - Ability Cooldown Indicator (Continued)
 
 ## Mod Overview and Purpose
 
-**Mod Name:** ACI - Ability Cooldown Indicator (Continued)
-
-**Description:** This RimWorld mod provides an intuitive cooldown indicator for colonist Ideology abilities. It is a continuation and update of Georodin's original mod. ACI enhances gameplay by providing a visual and auditory cue when Ideology abilities are ready to be used again.
-
-**Purpose:** The primary goal of this mod is to prevent players from missing the right moment to reactivate colonist abilities. The indicator utilizes a color ramp from red (not ready) to green (almost ready) and finally cyan (ready). A notification sound and a short message are also displayed when abilities are ready.
-
-**Important Note:** This mod is currently limited to Ideology abilities and does not support Royalty abilities. It should be placed at the end of the mod list to ensure compatibility with supported mods.
+The ACI - Ability Cooldown Indicator (Continued) is a mod for RimWorld that enhances gameplay by providing visual indicators for colonist Ideology abilities. This mod is especially useful for players who want to optimize their strategy by effectively managing ability cooldowns. The mod visually alerts players when abilities are ready to use again, ensuring that no crucial moment is missed.
 
 ## Key Features and Systems
 
-- **Topbar Integration:** The mod modifies the colonist topbar to show ability cooldown indicators.
-- **Color-Coded Notifications:** A color ramp provides a clear visual status of ability readiness.
-- **Auditory and Text Notifications:** Users are alerted with a sound and text message when abilities are ready.
-- **Mod Compatibility:** While it supports “Colony Groups” and “CM Color Coded Mood Bar,” it may conflict with other mods altering the topbar.
+- **Cooldown Indicator**: Displays an icon on the topbar that changes color based on the cooldown status of Ideology abilities.
+- **Color Ramp**: The indicator transitions from red (not ready) to green (almost ready) and finally to cyan (ready).
+- **Notifications**: The mod displays a brief message and plays a notification sound when abilities are ready.
+- **Compatibility**: Currently, the mod only supports Ideology abilities. There are no features for Royalty abilities currently as the author hasn't used the Royalty DLC extensively.
+- **Integration with Other Mods**: The mod supports integration with Colony Groups and CM Color Coded Mood Bar.
 
 ## Coding Patterns and Conventions
 
-- **File Naming:** Use PascalCase for class and method names.
-- **Access Modifiers:** Keep classes and methods internal unless they need to be exposed externally.
-- **Consistent Indentation:** Use spaces instead of tabs for consistent formatting.
-
-### Relevant Files
-
-- **HarmonyPatches.cs**
-  - Defines Harmony patches to modify game behavior selectively.
-
-- **IOUtil.cs**
-  - Contains utility methods for Input/Output operations.
-
-- **MainFunctionality.cs**
-  - Core class where the main logic of the cooldown indicator is implemented.
+- **Code Structure**: The functionality is divided into several C# files, separating concerns such as Harmony patches and utility functions.
+- **Naming Conventions**: Follows standard C# conventions with PascalCase for class names and camelCase for method names.
+- **Error Handling**: Encourage users to use the Log Uploader for logs and to report issues through Discord channels for efficient error resolution.
 
 ## XML Integration
 
-- Define XML extensions to extend existing game definitions without altering the core files.
-- Ensure that XML definitions are placed in the appropriate folder structure, following RimWorld's modding best practices.
-- Utilize XML inheritance to extend base game functionality where possible.
+The mod consists of an `About.xml` file that specifies dependencies and metadata. This XML configuration is critical for ensuring compatibility with other mods and identifying the mod within RimWorld.
+
+- **XML Definition**: Ensure correct XML formatting and dependencies listed properly. 
+- **Load Order**: Instructions emphasize placing this mod at the end of the modlist to ensure it correctly overrides supported mods.
 
 ## Harmony Patching
 
-- Use Harmony to patch methods without modifying the original game files.
-- Create prefix, postfix, or transpiler methods as needed to inject logic.
-- Ensure patches are targeted only at necessary methods to minimize performance impact and compatibility issues.
+Harmony is a critical dependency for this mod, facilitating non-destructive modification of existing game code.
+
+- **Patch Class**: `HarmonyPatches` is utilized to intercept and extend the game's behavior without modifying base engine code.
+- **Transpiler Method**: The `Transpiler` is used to modify the IL code of the target method, adding the cooldown indicator logic.
 
 ## Suggestions for Copilot
 
-To leverage GitHub Copilot effectively:
+- **Autogenerate Patch Templates**: Provide starter code for new Harmony patches.
+- **XML Update Prompts**: Assist in maintaining XML files, ensuring dependencies are correctly referenced.
+- **Naming Suggestions**: Recommend consistent naming conventions aligned with existing code for new functions and classes.
+- **Debugging Assistance**: Propose potential debugging steps or comments, especially within Harmony transpilation.
 
-- **Utilize Copilot for Boilerplate Code:** Auto-generate repetitive parts of the code, such as property definitions or basic method structures.
-- **Leverage Code Suggestions:** Use Copilot's suggestions to explore potential improvements in logic structures or optimizations in the code.
-- **Implement Error Handling:** Depending on the suggestions, implement comprehensive error checking and handling mechanisms.
-- **Collaborate and Review:** Encourage the team to use Copilot but review all generated code carefully to ensure it aligns with the mod's requirements and standards.
+## Additional Developer Notes
 
-We hope this guide proves helpful as you work on improving and maintaining the ACI mod. Feel free to contribute by fixing bugs or suggesting enhancements!
+- **Community Contributions**: Encourage developers to contribute by reporting issues or providing solutions via GitHub.
+- **Troubleshooting Guidelines**: Start with minimal mods to isolate errors and use specific channels for reporting issues.
+- **Special Acknowledgments**: Thanks to contributors and the RimWorld modding community at large for their support.
+
+This mod enhances player experience by offering real-time feedback on ability cooldowns, making strategic management in RimWorld more efficient and enjoyable.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

@@ -33,12 +33,12 @@ public static class HarmonyPatches
             new CodeInstruction(OpCodes.Newobj,
                 typeof(ColonistBarColonistDrawer)
                     .GetNestedType("IconDrawCall", BindingFlags.Instance | BindingFlags.NonPublic)
-                    .GetConstructors()[0]),
+                    ?.GetConstructors()[0]),
 
             new CodeInstruction(OpCodes.Callvirt,
                 typeof(List<>)
                     .MakeGenericType(typeof(ColonistBarColonistDrawer).GetNestedType("IconDrawCall",
-                        BindingFlags.Instance | BindingFlags.NonPublic)).GetMethod("Add"))
+                        BindingFlags.Instance | BindingFlags.NonPublic)!).GetMethod("Add"))
         ];
         var harmony = new Harmony("rimworld.cooldownindicator");
         if (ModLister.GetActiveModWithIdentifier("CrashM.ColorCodedMoodBar.11", true) != null)
